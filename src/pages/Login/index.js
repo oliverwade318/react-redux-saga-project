@@ -7,6 +7,7 @@ export default function Login() {
     <Container>
       <Title isRed>Login</Title>
       <Paragraph>Lorem Ipsum</Paragraph>
+      <button type="button">Enviar</button>
     </Container>
   );
 }

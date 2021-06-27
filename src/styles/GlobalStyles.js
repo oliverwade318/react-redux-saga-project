@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { PrimaryColor, PrimaryDarkColor } from "../congif/colors";
 
 export default createGlobalStyle`
   * {
@@ -10,7 +11,8 @@ export default createGlobalStyle`
 
   body {
     font-family: sans-serif;
-    background-color: #eee;
+    background-color: ${PrimaryDarkColor};
+    color: ${PrimaryDarkColor};
   }
 
   html,
@@ -21,10 +23,16 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+    background-color: ${PrimaryColor};
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
   }
 
   a {
     text-decoration: none;
+    color: ${PrimaryColor};
   }
 
   ul {
