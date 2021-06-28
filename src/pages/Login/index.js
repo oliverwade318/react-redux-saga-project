@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Container } from "../../styles/GlobalStyles";
 import { Title, Paragraph } from "./style";
+import * as exampleActions from "../../store/modules/examples/actions";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -9,9 +10,7 @@ export default function Login() {
   function handleClick(event) {
     event.preventDefault();
 
-    dispatch({
-      type: "BOTAO_CLICADO"
-    });
+    dispatch(exampleActions.clicaBotao());
   }
   return (
     <Container>
