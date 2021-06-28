@@ -1,0 +1,38 @@
+[
+  {
+    "status": 1,
+    "cod_matricula": "sample string 2",
+    "cod_aluno": "sample string 3",
+    "aluno": "sample string 4",
+    "dataNascimento": "2021-06-28T16:06:47.4953619-03:00",
+    "turma": "sample string 6",
+    "serie": "sample string 7",
+    "curso": "sample string 8",
+    "codigoEscola": "sample string 9",
+    "turno": "sample string 10"
+  },
+  {
+    "status": 1,
+    "cod_matricula": "sample string 2",
+    "cod_aluno": "sample string 3",
+    "aluno": "sample string 4",
+    "dataNascimento": "2021-06-28T16:06:47.4953619-03:00",
+    "turma": "sample string 6",
+    "serie": "sample string 7",
+    "curso": "sample string 8",
+    "codigoEscola": "sample string 9",
+    "turno": "sample string 10"
+  },
+  {
+    "status": 1,
+    "cod_matricula": "sample string 2",
+    "cod_aluno": "sample string 3",
+    "aluno": "sample string 4",
+    "dataNascimento": "2021-06-28T16:06:47.4953619-03:00",
+    "turma": "sample string 6",
+    "serie": "sample string 7",
+    "curso": "sample string 8",
+    "codigoEscola": "sample string 9",
+    "turno": "sample string 10"
+  }
+]
