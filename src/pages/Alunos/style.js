@@ -30,4 +30,11 @@ export const AlunoSpecies = styled.h3`
   font-weight: 300;
 `;
 
-export const AlunoStatus = styled.div``;
+export const AlunoStatus = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const OnlyAlunoStatus = styled.div`
+  margin: 0 10px 20px 10px;
+`;

@@ -9,7 +9,8 @@ import {
   AlunoName,
   AlunoPhoto,
   AlunoSpecies,
-  AlunoStatus
+  AlunoStatus,
+  OnlyAlunoStatus
 } from "./style";
 import axios from "../../services/axios";
 
@@ -48,13 +49,17 @@ export default function Alunos() {
             <AlunoSpecies>{character.species}</AlunoSpecies>
 
             <AlunoStatus>
-              <Link to={`/aluno/${character.id}/edit`}>
-                <FaEdit size={18} />
-              </Link>
+              <OnlyAlunoStatus>
+                <Link to={`/aluno/${character.id}/edit`}>
+                  <FaEdit size={18} />
+                </Link>
+              </OnlyAlunoStatus>
 
-              <Link to={`/aluno/${character.id}/delete`}>
-                <FaWindowClose size={18} />
-              </Link>
+              <OnlyAlunoStatus>
+                <Link to={`/aluno/${character.id}/delete`}>
+                  <FaWindowClose size={18} />
+                </Link>
+              </OnlyAlunoStatus>
             </AlunoStatus>
           </>
         ))}
