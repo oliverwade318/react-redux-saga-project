@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 export default function MyRoute({ component: Component, IsClosed, ...rest }) {
-  const isLoggedIn = false;
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   // A rota esta fechada e o usuário não esta logado (verifica area de login)
   if (IsClosed && !isLoggedIn) {

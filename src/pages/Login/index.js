@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import { toast } from "react-toastify";
-// import { isEmail } from "validator";
 import { get } from "lodash";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 import { Container } from "../../styles/GlobalStyles";
-import { Form, Title } from "./style";
-import axios from "../../services/axios";
-import history from "../../services/history";
+import { Title, Form } from "./style";
+import * as actions from "../../store/modules/auth/actions";
 
-export default function Login() {
-  const [name, setName] = useState("");
+export default function Login(props) {
+  const dispatch = useDispatch();
+
+  const prevPath = get(props, "location.state.prevPath", "/"); // redireciona ou pra pagina que estava antes de login se der tudo certo ou pra home novamente
+
+  const [name, setName] = useState(""); // a string vaiza é o valor inicial do input
   const [species, setSpecies] = useState("");
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
 
     let formErrors = false;
@@ -26,26 +29,9 @@ export default function Login() {
       toast.error("Espécie deve ter entre 3 e 255 caracteres");
     }
 
-    // if (!isEmail(email)) {
-    //   formErrors = true;
-    //   toast.error("E-mail inválido");
-    // }
-
     if (formErrors) return;
 
-    try {
-      await axios.post("/character/", {
-        name,
-        species
-      });
-      toast.success("Você fez seu cadastro");
-      history.push("/login");
-    } catch (err) {
-      const error = get(err, "response.data.errors", []);
-      error.map((error) => toast.error(error));
-
-      // console.log(err); - Erro pq a API nao aceita POST de fora
-    }
+    dispatch(actions.loginRequest({ name, species, prevPath }));
   }
 
   return (
@@ -66,7 +52,7 @@ export default function Login() {
           onChange={(e) => setSpecies(e.target.value)}
         />
 
-        <button type="submit">Criar minha conta</button>
+        <button type="submit">Acessar minha Conta</button>
       </Form>
     </Container>
   );
